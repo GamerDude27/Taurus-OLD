@@ -1,0 +1,3 @@
+[submodule "Taurus/dependencies/spdlog"]
+	path = Taurus/dependencies/spdlog
+	url = https://github.com/gabime/spdlog

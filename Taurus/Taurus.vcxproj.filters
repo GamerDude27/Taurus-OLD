@@ -27,9 +27,15 @@
     <ClInclude Include="src\Taurus\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Taurus\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Taurus\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Taurus\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
