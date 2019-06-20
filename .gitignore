@@ -3,5 +3,8 @@
 /bin/
 bin-int/
 
-# Files
+# Visual Studio Files
+*.sln
+*.vcxproj
+*.filters
 *.user
