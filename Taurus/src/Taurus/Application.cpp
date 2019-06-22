@@ -1,5 +1,8 @@
 #include "Application.h"
 
+#include "Events/ApplicationEvent.h"
+#include "Taurus/Log.h"
+
 namespace Taurus
 {
 	Application::Application()
@@ -14,6 +17,10 @@ namespace Taurus
 
 	void Application::Run()
 	{
+		WindowResizeEvent resizeEvent(1280, 720);
+
+		TAURUS_TRACE(resizeEvent);
+
 		while (true);
 	}
 }
