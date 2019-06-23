@@ -1,9 +1,6 @@
 #pragma once
 
-#include "Taurus/Core.h"
-
-#include <string>
-#include <functional>
+#include "tauruspch.h"
 
 namespace Taurus
 {

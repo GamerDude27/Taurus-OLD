@@ -23,6 +23,9 @@ project "Taurus"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "tauruspch.h"
+	pchsource "Taurus/src/tauruspch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Taurus
 {
 	class TAURUS_API WindowResizeEvent : public Event
