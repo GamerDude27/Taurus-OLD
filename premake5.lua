@@ -12,6 +12,14 @@ workspace "Taurus"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Taurus/dependencies/GLFW/include"
+
+group "Dependencies"
+	include "Taurus/dependencies/_premakefiles/GLFW"
+group ""
+
 --
 -- Taurus project  
 --
@@ -35,7 +43,14 @@ project "Taurus"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/dependencies/spdlog/include"
+		"%{prj.name}/dependencies/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

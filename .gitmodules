@@ -1,3 +1,6 @@
 [submodule "Taurus/dependencies/spdlog"]
 	path = Taurus/dependencies/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Taurus/dependencies/GLFW"]
+	path = Taurus/dependencies/GLFW
+	url = https://github.com/glfw/glfw
