@@ -71,14 +71,17 @@ project "Taurus"
 
 	filter "configurations:Debug"
 		defines "TAURUS_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "TAURUS_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Distribution"
 		defines "TAURUS_DISTRIBUTION"
+		buildoptions "/MD"
 		optimize "On"
 
 --
@@ -121,12 +124,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "TAURUS_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "TAURUS_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Distribution"
 		defines "TAURUS_DISTRIBUTION"
+		buildoptions "/MD"
 		optimize "On"

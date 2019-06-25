@@ -11,7 +11,7 @@ namespace Taurus
 
 	static void GLFWErrorCallback(int error, const char *description)
 	{
-		TAURUS_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
+		TAURUS_CORE_ERROR("GLFW error ({0}): {1}", error, description);
 	}
 
 	Window *Window::Create(const WindowProperties &properties)

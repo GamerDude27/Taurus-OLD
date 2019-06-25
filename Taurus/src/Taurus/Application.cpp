@@ -26,6 +26,12 @@ namespace Taurus
 		{
 			glClearColor(0.247f, 0.247f, 0.247f, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+			
+			for (Layer *layer : m_LayerStack)
+			{
+				layer->OnUpdate();
+			}
+			
 			m_Window->OnUpdate();
 		}
 	}
@@ -35,7 +41,24 @@ namespace Taurus
 		EventDispatcher dispatcher(event);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNCTION(OnWindowClose));
 
-		TAURUS_CORE_TRACE("{0}", event); // Logs every event
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+			(*--it)->OnEvent(event);
+			if (event.Handled)
+			{
+				break;
+			}
+		}
+	}
+
+	void Application::PushLayer(Layer *layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer *overlay)
+	{
+		m_LayerStack.PushOverlay(overlay);
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent &event)
