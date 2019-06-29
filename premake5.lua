@@ -14,12 +14,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "Taurus/dependencies/GLFW/include"
-IncludeDir["Glad"] = "Taurus/dependencies/Glad/include"
+IncludeDir["GLFW"] = "Taurus/dependencies/GLFW/GLFW/include"
+IncludeDir["Glad"] = "Taurus/dependencies/Glad/Glad/include"
 
 group "Dependencies"
-	include "Taurus/dependencies/_premakefiles/GLFW"
-	include "Taurus/dependencies/_premakefiles/Glad"
+	include "Taurus/dependencies/GLFW"
+	include "Taurus/dependencies/Glad"
 group ""
 
 --
