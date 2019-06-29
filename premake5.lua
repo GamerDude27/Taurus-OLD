@@ -15,9 +15,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Taurus/dependencies/GLFW/include"
+IncludeDir["Glad"] = "Taurus/dependencies/Glad/include"
 
 group "Dependencies"
 	include "Taurus/dependencies/_premakefiles/GLFW"
+	include "Taurus/dependencies/_premakefiles/Glad"
 group ""
 
 --
@@ -44,12 +46,14 @@ project "Taurus"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/dependencies/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -61,7 +65,8 @@ project "Taurus"
 		defines
 		{
 			"TAURUS_PLATFORM_WINDOWS",
-			"TAURUS_BUILD_DLL"
+			"TAURUS_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
