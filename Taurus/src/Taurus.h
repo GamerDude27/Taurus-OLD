@@ -7,5 +7,7 @@
 #include "Taurus/Layer.h"
 #include "Taurus/Log.h"
 
+#include "Taurus/ImGui/ImGuiLayer.h"
+
 // Entry point
 #include "Taurus/EntryPoint.h"

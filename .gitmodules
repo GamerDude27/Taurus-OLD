@@ -4,3 +4,6 @@
 [submodule "Taurus/dependencies/GLFW/GLFW"]
 	path = Taurus/dependencies/GLFW/GLFW
 	url = https://github.com/glfw/glfw
+[submodule "Taurus/dependencies/imgui/imgui"]
+	path = Taurus/dependencies/imgui/imgui
+	url = https://github.com/ocornut/imgui

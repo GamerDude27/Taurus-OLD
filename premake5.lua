@@ -16,10 +16,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Taurus/dependencies/GLFW/GLFW/include"
 IncludeDir["Glad"] = "Taurus/dependencies/Glad/Glad/include"
+IncludeDir["ImGui"] = "Taurus/dependencies/imgui/imgui"
 
 group "Dependencies"
 	include "Taurus/dependencies/GLFW"
 	include "Taurus/dependencies/Glad"
+	include "Taurus/dependencies/imgui"
 group ""
 
 --
@@ -47,13 +49,15 @@ project "Taurus"
 		"%{prj.name}/src",
 		"%{prj.name}/dependencies/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
